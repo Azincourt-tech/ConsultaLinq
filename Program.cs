@@ -25,7 +25,29 @@ namespace ConsultaLinq
                 new Produto {Id = 7, CategoriaId = 2, Nome = "Feijão", Status = true, Valor = 12},
             };
 
+            var listaCategorias = new List<Categoria>()
+            {
+                new Categoria {Id = 1, Status = true, Nome = "Eletronicos"},
+                new Categoria {Id = 2, Status = true, Nome = "Alimentos"},
+                new Categoria {Id = 3, Status = true, Nome = "Vestuario"}
+            };
+
+            //CRIAR UMA CONSULTA LINQ
+
+            var resultado = from produto in listaProdutos
+                            select produto;
+
+            foreach(var produto in resultado)
+            {
+                Console.WriteLine($" | {produto.Id} | {produto.CategoriaId} | {produto.Nome} | {produto.Valor}");
+                
+            }
+
+            Console.ReadLine();
+
         }
+
+
 
         class Produto
         {
