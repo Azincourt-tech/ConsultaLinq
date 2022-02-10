@@ -33,13 +33,24 @@ namespace ConsultaLinq
             };
 
             //CRIAR UMA CONSULTA LINQ
+            // 01 - consulta com where
+            //var resultado = from produto in listaProdutos
+            //                where produto.Nome.Substring(0,1) == "M" && produto.Status == true
+            //                select produto;
 
+
+            // 02- consulta com orderby
             var resultado = from produto in listaProdutos
+                            where produto.Id > 1 && produto.Id < 6
+                            orderby produto.Id 
                             select produto;
 
-            foreach(var produto in resultado)
+
+
+
+            foreach (var produto in resultado)
             {
-                Console.WriteLine($" | {produto.Id} | {produto.CategoriaId} | {produto.Nome} | {produto.Valor}");
+                Console.WriteLine($" | {produto.Id} | {produto.CategoriaId} | {produto.Nome} | Valor - {produto.Valor}");
                 
             }
 
