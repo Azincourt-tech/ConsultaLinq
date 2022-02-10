@@ -32,25 +32,19 @@ namespace ConsultaLinq
                 new Categoria {Id = 3, Status = true, Nome = "Vestuario"}
             };
 
-            //CRIAR UMA CONSULTA LINQ
-            // 01 - consulta com where
-            //var resultado = from produto in listaProdutos
-            //                where produto.Nome.Substring(0,1) == "M" && produto.Status == true
-            //                select produto;
 
-
-            // 02- consulta com orderby
             var resultado = from produto in listaProdutos
-                            where produto.Id > 1 && produto.Id < 6
-                            orderby produto.Id 
-                            select produto;
+                            select new ProdutoDto 
+                            { Nome = produto.Nome, 
+                              Valor = produto.Valor, 
+                              Status = produto.Status };
 
 
 
 
             foreach (var produto in resultado)
             {
-                Console.WriteLine($" | {produto.Id} | {produto.CategoriaId} | {produto.Nome} | Valor - {produto.Valor}");
+                Console.WriteLine($" | {produto.Nome} | {produto.Valor} | {produto.Status}");
                 
             }
 
@@ -76,5 +70,32 @@ namespace ConsultaLinq
             public string Nome { get; set; }
             public bool Status { get; set; }
         }
+
+        class ProdutoDto
+        {
+            public string Nome { get; set; }
+            public decimal Valor { get; set; }
+            public bool Status { get; set; }
+        }
+
+
+
+
+        #region Criando consulta com where e orderby
+
+        //CRIAR UMA CONSULTA LINQ
+        // 01 - consulta com where
+        //var resultado = from produto in listaProdutos
+        //                where produto.Nome.Substring(0,1) == "M" && produto.Status == true
+        //                select produto;
+
+
+        // 02- consulta com orderby
+        //var resultado = from produto in listaProdutos
+        //                where produto.Id > 1 && produto.Id < 6
+        //                orderby produto.Id 
+        //                select produto;
+
+        #endregion
     }
 }
