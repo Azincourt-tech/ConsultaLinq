@@ -33,20 +33,7 @@ namespace ConsultaLinq
             };
 
 
-            var resultado = from produto in listaProdutos
-                            select new ProdutoDto 
-                            { Nome = produto.Nome, 
-                              Valor = produto.Valor, 
-                              Status = produto.Status };
-
-
-
-
-            foreach (var produto in resultado)
-            {
-                Console.WriteLine($" | {produto.Nome} | {produto.Valor} | {produto.Status}");
-                
-            }
+            
 
             Console.ReadLine();
 
@@ -71,19 +58,12 @@ namespace ConsultaLinq
             public bool Status { get; set; }
         }
 
-        class ProdutoDto
-        {
-            public string Nome { get; set; }
-            public decimal Valor { get; set; }
-            public bool Status { get; set; }
-        }
 
 
-
-
-        #region Criando consulta com where e orderby
+        #region Criando consulta com where, orderby, groupby
 
         //CRIAR UMA CONSULTA LINQ
+
         // 01 - consulta com where
         //var resultado = from produto in listaProdutos
         //                where produto.Nome.Substring(0,1) == "M" && produto.Status == true
@@ -95,6 +75,42 @@ namespace ConsultaLinq
         //                where produto.Id > 1 && produto.Id < 6
         //                orderby produto.Id 
         //                select produto;
+
+
+        //03- consulta com groupby
+        //var result = from prod in listaProdutos
+        //             group prod by prod.CategoriaId into produtosgr
+        //             select produtosgr;
+
+        #endregion
+
+
+        #region Projeção de dados
+
+        //CONSULTA
+
+        //var resultado = from produto in listaProdutos
+        //                select new ProdutoDto 
+        //                { Nome = produto.Nome, 
+        //                  Valor = produto.Valor, 
+        //                  Status = produto.Status };
+
+        //foreach (var produto in resultado)
+        //{
+        //    Console.WriteLine($" | {produto.Nome} | {produto.Valor} | {produto.Status}");
+
+        //}
+
+
+        //CLASSE
+        //class ProdutoDto
+        //{
+        //    public string Nome { get; set; }
+        //    public decimal Valor { get; set; }
+        //    public bool Status { get; set; }
+        //}
+
+
 
         #endregion
     }
