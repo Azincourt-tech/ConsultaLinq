@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,11 +33,16 @@ namespace ConsultaLinq
                 new Categoria {Id = 3, Status = true, Nome = "Vestuario"}
             };
 
-            
 
 
             Console.ReadLine();
 
+        }
+
+
+        static bool FiltraProdutoPorValor(Produto produto)
+        {
+            return produto.Valor > 50;
         }
 
 
@@ -122,6 +128,27 @@ namespace ConsultaLinq
         //Console.WriteLine(result.Nome);
 
         #endregion
+
+
+        #region Sintaxe do where, orderby, revert
+
+        //where
+        //var resultado = listaProdutos.Where(prod => prod.Id >= 2 && prod.Id <= 5);
+        //var resultado = listaProdutos.Where(prod => FiltraProdutoPorValor(prod));
+
+        //orderby e orderbydescinding
+        //resultado = resultado.OrderBy(prod => prod.Id);
+
+        //revert
+        //resultado = resultado.Reverse();
+
+        //foreach (var result in resultado)
+        //{
+        //    Console.WriteLine($"ID: {result.Id} | Nome: {result.Nome}");
+        //}
+
+        #endregion
+
 
 
         #region Projeção de dados
