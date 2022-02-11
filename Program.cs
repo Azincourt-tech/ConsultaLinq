@@ -20,7 +20,7 @@ namespace ConsultaLinq
                 new Produto {Id = 3, CategoriaId = 1, Nome = "Video Game", Status = true, Valor = 99},
                 new Produto {Id = 6, CategoriaId = 2, Nome = "Arroz", Status = true, Valor = 55},
                 new Produto {Id = 8, CategoriaId = 1, Nome = "TV", Status = true, Valor = 45},
-                new Produto {Id = 1, CategoriaId = 3, Nome = "Camiseta", Status = true, Valor = 100},
+                new Produto {Id = 4, CategoriaId = 3, Nome = "Camiseta", Status = true, Valor = 100},
                 new Produto {Id = 5, CategoriaId = 1, Nome = "Microondas", Status = true, Valor = 90},
                 new Produto {Id = 7, CategoriaId = 2, Nome = "Feijão", Status = true, Valor = 12},
             };
@@ -32,6 +32,7 @@ namespace ConsultaLinq
                 new Categoria {Id = 3, Status = true, Nome = "Vestuario"}
             };
 
+            
 
 
             Console.ReadLine();
@@ -98,6 +99,27 @@ namespace ConsultaLinq
         //}
 
 
+
+        #endregion
+
+
+
+        #region Sintaxe do first, last e single
+
+        //First
+        //var result = listaProdutos.FirstOrDefault();
+
+        //Console.WriteLine(result.Nome);
+
+        //Last
+        //var result = listaProdutos.LastOrDefault();
+
+        //Console.WriteLine(result.Nome);
+
+        //Single
+        //var result = listaProdutos.SingleOrDefault(x => x.Id == 4);
+
+        //Console.WriteLine(result.Nome);
 
         #endregion
 
