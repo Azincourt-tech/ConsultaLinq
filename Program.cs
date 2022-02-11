@@ -13,24 +13,46 @@ namespace ConsultaLinq
         {
 
             // FONTE DE DADOS
-            var listaProdutos = new List<Produto>()
-            {
-                new Produto {Id = 9, CategoriaId = 2, Nome = "Geladeira", Status = true, Valor = 10},
-                new Produto {Id = 2, CategoriaId = 3, Nome = "Short", Status = true, Valor = 1},
-                new Produto {Id = 4, CategoriaId = 1, Nome = "Maquina de lavar", Status = false, Valor = 32},
-                new Produto {Id = 3, CategoriaId = 1, Nome = "Video Game", Status = true, Valor = 99},
-                new Produto {Id = 6, CategoriaId = 2, Nome = "Arroz", Status = true, Valor = 55},
-                new Produto {Id = 8, CategoriaId = 1, Nome = "TV", Status = true, Valor = 45},
-                new Produto {Id = 4, CategoriaId = 3, Nome = "Camiseta", Status = true, Valor = 100},
-                new Produto {Id = 5, CategoriaId = 1, Nome = "Microondas", Status = true, Valor = 90},
-                new Produto {Id = 7, CategoriaId = 2, Nome = "Feijão", Status = true, Valor = 12},
-            };
+            var listaProdutos = new List<Produto>() {
 
-            var listaCategorias = new List<Categoria>()
-            {
-                new Categoria {Id = 1, Status = true, Nome = "Eletronicos"},
-                new Categoria {Id = 2, Status = true, Nome = "Alimentos"},
-                new Categoria {Id = 3, Status = true, Nome = "Vestuario"}
+                new Produto
+                {
+                    Id = 9,
+                    CategoriaId = 2,
+                    Nome = "Geladeira",
+                    Status = true,
+                    Valor = 10,
+                    Categorias = new List<Categoria>()
+                    {
+                        new Categoria()
+                        {
+                            Id = 1, Nome = "Categoria 01", Status = true
+                        },
+                        new Categoria()
+                        {
+                            Id = 2, Nome = "Categoria 02", Status = true
+                        }
+                    }
+
+
+                },
+
+                new Produto
+                {
+                    Id = 2, CategoriaId = 3, Nome = "Short", Status = true, Valor = 1,
+                    Categorias = new List<Categoria>()
+                    {
+                        new Categoria()
+                        {
+                            Id = 3, Nome = "Categoria 03", Status = true
+                        },
+                        new Categoria()
+                        {
+                            Id = 4, Nome = "Categoria 04", Status = true
+                        }
+                    }
+                },
+
             };
 
 
@@ -110,7 +132,6 @@ namespace ConsultaLinq
         #endregion
 
 
-
         #region Sintaxe do first, last e single
 
         //First
@@ -158,7 +179,7 @@ namespace ConsultaLinq
         #endregion
 
 
-        #region Select e SelectMany
+        #region Select
 
 
         //Select
@@ -200,10 +221,34 @@ namespace ConsultaLinq
         //}
 
 
+        #endregion
+
+
+        #region SelectMany
 
         //SelectMany
 
+        //var listaCategoria = listaProdutos.SelectMany(prod => prod.Categorias);
 
+
+        //foreach(var categoria in listaCategoria)
+        //{
+        //    Console.WriteLine($"ID: {categoria.Id} | NOME: {categoria.Nome} | STATUS: {categoria.Status}");
+        //}
+
+
+        //Outro exemplo de selectmany
+        //buscando apenas uma lista de string
+
+        //var listaCategoria = listaProdutos.SelectMany(prod => new List<string>(
+        //        prod.Categorias.Select(cat => cat.Nome)));
+
+        ///SelectMany
+
+        //    foreach (var nome in listaCategoria)
+        //    {
+        //        Console.WriteLine($"NOME: {nome} |");
+        //    }
 
         #endregion
 
