@@ -27,23 +27,8 @@ namespace ConsultaLinq
 
             };
 
-            // Ignorar os tres primeiros produtos e pegar o restante
-
-
-
-
-
-            // pegar os 3 primeiros produtos e ignorar o restante
 
             Console.ReadLine();
-
-        }
-
-        class ProdutoResponse
-        {
-            public int Id { get; set; }
-            public string Nome { get; set; }
-            public decimal Valor { get; set; }
 
         }
 
@@ -55,14 +40,6 @@ namespace ConsultaLinq
             public bool Status { get; set; }
             public decimal Valor { get; set; }
             public int CategoriaId { get; set; }
-            public List<Categoria> Categorias { get; set; }
-        }
-
-        class Categoria
-        {
-            public int Id { get; set; }
-            public string Nome { get; set; }
-            public bool Status { get; set; }
         }
 
 
@@ -231,6 +208,31 @@ namespace ConsultaLinq
     //    {
     //        Console.WriteLine($"NOME: {nome} |");
     //    }
+
+    #endregion
+
+
+    #region TAKE E SKIP
+
+    //// Ignorar os tres primeiros produtos e pegar o restante - TAKE
+    //var tresPrimeiros = listaProdutos.Take(3);
+
+    //Console.WriteLine("-----------------------Pega os 3 primeiros--------------------------");
+    //foreach (var produto in tresPrimeiros)
+    //{
+    //    Console.WriteLine($"ID: {produto.Id} | NOME; {produto.Nome}");
+    //}
+
+
+    //// pegar os 3 primeiros produtos e ignorar o restante - SKIP
+    //var ignorarPrimeiros = listaProdutos.Skip(3);
+
+    //Console.WriteLine("-----------------------Ignora os 3 primeiros-------------------------");
+    //foreach (var item in ignorarPrimeiros)
+    //{
+
+    //    Console.WriteLine($"ID: {item.Id} | NOME; {item.Nome}");
+    //}
 
     #endregion
 
