@@ -33,7 +33,6 @@ namespace ConsultaLinq
             };
 
 
-            
 
             Console.ReadLine();
 
@@ -60,7 +59,7 @@ namespace ConsultaLinq
 
 
 
-        #region Criando consulta com where, orderby, groupby
+        #region Criando consulta com where, orderby, groupby, join
 
         //CRIAR UMA CONSULTA LINQ
 
@@ -81,6 +80,24 @@ namespace ConsultaLinq
         //var result = from prod in listaProdutos
         //             group prod by prod.CategoriaId into produtosgr
         //             select produtosgr;
+
+
+        //04- consulta com Join
+        //var result = from prod in listaProdutos
+        //             join cat in listaCategorias
+        //             on prod.CategoriaId equals cat.Id
+        //             select new
+        //             {
+        //                 Produto = prod,
+        //                 Categoria = cat
+        //             };
+
+        //foreach (var item in result)
+        //{
+        //    Console.WriteLine($"Produto: {item.Produto.Nome} | Categoria: {item.Categoria.Nome}");
+        //}
+
+
 
         #endregion
 
