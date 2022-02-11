@@ -27,6 +27,42 @@ namespace ConsultaLinq
 
             };
 
+            //valor total da lista
+            var valorTotal = listaProdutos.Sum(prod => prod.Valor);
+
+            //media do valor dos produtos
+            var media = listaProdutos.Average(prod => prod.Valor);
+
+            //quantos itens tem na lista
+            var quantidade = listaProdutos.Count();
+            var quantValorMaiorQ90 = listaProdutos.Count(prod => prod.Valor > 90);
+
+            //criar uma lista com um range de numeros
+
+            var range = Enumerable.Range(1, 15);
+
+            foreach(var item in range)
+            {
+                Console.WriteLine(item);
+            }
+
+            //criar uma lista com varios itens semelhantes
+
+            var listaDeIguais = Enumerable.Repeat(new Produto() { Id = 1 },5);
+            
+            foreach( var item in listaDeIguais)
+            {
+                Console.WriteLine(item.Id);
+            }
+
+
+
+            Console.WriteLine($"Valor total: {valorTotal}");
+            Console.WriteLine($"Valor total: {media}");
+            Console.WriteLine($"Valor total: {quantidade}");
+            Console.WriteLine($"Total de itens com valor maior que 90: {quantValorMaiorQ90}");
+
+
 
             Console.ReadLine();
 
