@@ -39,12 +39,13 @@ namespace ConsultaLinq
 
         }
 
-
-        static bool FiltraProdutoPorValor(Produto produto)
+        class ProdutoResponse
         {
-            return produto.Valor > 50;
-        }
+            public int Id { get; set; }
+            public string Nome { get; set; }
+            public decimal Valor { get; set; }
 
+        }
 
 
         class Produto
@@ -147,8 +148,64 @@ namespace ConsultaLinq
         //    Console.WriteLine($"ID: {result.Id} | Nome: {result.Nome}");
         //}
 
+        //classe utilizado no where
+
+        //static bool FiltraProdutoPorValor(Produto produto)
+        //{
+        //    return produto.Valor > 50;
+        //}
+
         #endregion
 
+
+        #region Select e SelectMany
+
+
+        //Select
+        //primeira forma de fazer o select
+
+        //var listaResposta = new List<ProdutoResponse>();
+
+
+        //    foreach(var produto in listaProdutos)
+        //    {
+        //        listaResposta.Add(new ProdutoResponse()
+        //{
+        //    Id = produto.Id,
+        //            Nome = produto.Nome,
+        //            Valor = produto.Valor
+        //        });
+
+        //    }
+
+        //    foreach(var p in listaResposta)
+        //    {
+        //        Console.WriteLine($"ID :{p.Id} | NOME: {p.Nome} | VALOR: {p.Valor}");
+        //    }
+
+
+        //forma simplificada do select
+
+        //var response = listaProdutos.Select(prod => new ProdutoResponse() {
+        //    Id = prod.Id,
+        //    Nome = prod.Nome,
+        //    Valor = prod.Valor,
+        //});
+
+        //response = response.OrderBy(prod => prod.Id);
+
+        //foreach(var p in response)
+        //{
+        //    Console.WriteLine($"ID :{p.Id} | NOME: {p.Nome} | VALOR: {p.Valor}");
+        //}
+
+
+
+        //SelectMany
+
+
+
+        #endregion
 
 
         #region Projeção de dados
